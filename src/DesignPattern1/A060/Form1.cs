@@ -1,4 +1,5 @@
-﻿using System;
+﻿using A060.Objects;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,46 +9,55 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace A030
+namespace A060
 {
     public partial class Form1 : Form
     {
-        private int _marioX = 10;
-        private int _marioY = 10;
+        //private int _marioX = 10;
+        //private int _marioY = 10;
         private int _marioCount = 0;
 
-        private int _luigiX = 10;
-        private int _luigiY = 50;
+        //private int _luigiX = 10;
+        //private int _luigiY = 50;
         private int _luigiCount = 0;
+
+        private List<CharaBase> _charaList = new List<CharaBase>();
 
         public Form1()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
 
+            _charaList.Add(new Mario());
+            _charaList.Add(new Luigi());
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.FillRectangle(new SolidBrush(Color.Red), _marioX, _marioY, 30, 30);
-            e.Graphics.FillRectangle(new SolidBrush(Color.Lime), _luigiX, _luigiY, 30, 30);
+            //e.Graphics.FillRectangle(new SolidBrush(Color.Red), _marioX, _marioY, 30, 30);
+            //e.Graphics.FillRectangle(new SolidBrush(Color.Lime), _luigiX, _luigiY, 30, 30);
+
+            foreach (var chara in _charaList)
+            {
+                e.Graphics.FillRectangle(new SolidBrush(chara.Color), chara.X, chara.Y, 30, 30);
+            }
         }
 
         private void RightButton_Click(object sender, EventArgs e)
         {
-            if (MarioRadioButton.Checked)
-            {
-                _marioX += 10;
-                panel1.Refresh();
-                return;
-            }
+            //if (MarioRadioButton.Checked)
+            //{
+            //    _marioX += 10;
+            //    panel1.Refresh();
+            //    return;
+            //}
 
-            if (LuigiRadioButton.Checked)
-            {
-                _luigiX += 20;
-                panel1.Refresh();
-                return;
-            }
+            //if (LuigiRadioButton.Checked)
+            //{
+            //    _luigiX += 20;
+            //    panel1.Refresh();
+            //    return;
+            //}
         }
 
         private void AButton_Click(object sender, EventArgs e)
