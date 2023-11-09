@@ -30,5 +30,22 @@ namespace A030
             e.Graphics.FillRectangle(new SolidBrush(Color.Red), _marioX, _marioY, 30, 30);
             e.Graphics.FillRectangle(new SolidBrush(Color.Lime), _luigiX, _luigiY, 30, 30);
         }
+
+        private void RightButton_Click(object sender, EventArgs e)
+        {
+            if (MarioRadioButton.Checked)
+            {
+                _marioX += 10;
+                panel1.Refresh();
+                return;
+            }
+
+            if (LuigiRadioButton.Checked)
+            {
+                _luigiX += 20;
+                panel1.Refresh();
+                return;
+            }
+        }
     }
 }
