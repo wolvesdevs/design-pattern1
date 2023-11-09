@@ -66,6 +66,7 @@
             this.AButton.TabIndex = 2;
             this.AButton.Text = "A";
             this.AButton.UseVisualStyleBackColor = true;
+            this.AButton.Click += new System.EventHandler(this.AButton_Click);
             // 
             // MarioRadioButton
             // 

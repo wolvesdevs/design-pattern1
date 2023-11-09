@@ -14,9 +14,11 @@ namespace A030
     {
         private int _marioX = 10;
         private int _marioY = 10;
+        private int _marioCount = 0;
 
         private int _luigiX = 10;
         private int _luigiY = 50;
+        private int _luigiCount = 0;
 
         public Form1()
         {
@@ -46,6 +48,35 @@ namespace A030
                 panel1.Refresh();
                 return;
             }
+        }
+
+        private void AButton_Click(object sender, EventArgs e)
+        {
+            if (MarioRadioButton.Checked)
+            {
+                _marioCount++;
+
+                if (_marioCount == 3)
+                {
+                    _marioCount = 0;
+                    MessageBox.Show("マリオです");
+                }
+
+                return;
+            }
+
+            if (LuigiRadioButton.Checked)
+            {
+                _luigiCount++;
+
+                if (_luigiCount == 5)
+                {
+                    MessageBox.Show("ルイージです");
+                }
+
+                return;
+            }
+
         }
     }
 }
