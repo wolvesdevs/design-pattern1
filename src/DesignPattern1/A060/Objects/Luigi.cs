@@ -7,10 +7,15 @@ using System.Threading.Tasks;
 
 namespace A060.Objects
 {
-    public sealed class Luigi: CharaBase
+    public sealed class Luigi : CharaBase
     {
         public Luigi() : base(10, 50, Color.Lime)
         {
+        }
+
+        public override void MoveRight()
+        {
+            base.X += 20;
         }
     }
 }

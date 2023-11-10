@@ -39,19 +39,19 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(10, 68);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Location = new System.Drawing.Point(12, 82);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(621, 257);
+            this.panel1.Size = new System.Drawing.Size(776, 308);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // RightButton
             // 
-            this.RightButton.Location = new System.Drawing.Point(10, 330);
-            this.RightButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.RightButton.Location = new System.Drawing.Point(12, 396);
+            this.RightButton.Margin = new System.Windows.Forms.Padding(2);
             this.RightButton.Name = "RightButton";
-            this.RightButton.Size = new System.Drawing.Size(135, 35);
+            this.RightButton.Size = new System.Drawing.Size(169, 42);
             this.RightButton.TabIndex = 1;
             this.RightButton.Text = "→";
             this.RightButton.UseVisualStyleBackColor = true;
@@ -59,10 +59,10 @@
             // 
             // AButton
             // 
-            this.AButton.Location = new System.Drawing.Point(161, 330);
-            this.AButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.AButton.Location = new System.Drawing.Point(201, 396);
+            this.AButton.Margin = new System.Windows.Forms.Padding(2);
             this.AButton.Name = "AButton";
-            this.AButton.Size = new System.Drawing.Size(135, 35);
+            this.AButton.Size = new System.Drawing.Size(169, 42);
             this.AButton.TabIndex = 2;
             this.AButton.Text = "A";
             this.AButton.UseVisualStyleBackColor = true;
@@ -72,35 +72,39 @@
             // 
             this.MarioRadioButton.AutoSize = true;
             this.MarioRadioButton.Checked = true;
-            this.MarioRadioButton.Location = new System.Drawing.Point(10, 26);
+            this.MarioRadioButton.Location = new System.Drawing.Point(12, 31);
+            this.MarioRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MarioRadioButton.Name = "MarioRadioButton";
-            this.MarioRadioButton.Size = new System.Drawing.Size(63, 20);
+            this.MarioRadioButton.Size = new System.Drawing.Size(72, 22);
             this.MarioRadioButton.TabIndex = 0;
             this.MarioRadioButton.TabStop = true;
             this.MarioRadioButton.Text = "マリオ";
             this.MarioRadioButton.UseVisualStyleBackColor = true;
+            this.MarioRadioButton.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // LuigiRadioButton
             // 
             this.LuigiRadioButton.AutoSize = true;
-            this.LuigiRadioButton.Location = new System.Drawing.Point(161, 26);
+            this.LuigiRadioButton.Location = new System.Drawing.Point(201, 31);
+            this.LuigiRadioButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LuigiRadioButton.Name = "LuigiRadioButton";
-            this.LuigiRadioButton.Size = new System.Drawing.Size(79, 20);
+            this.LuigiRadioButton.Size = new System.Drawing.Size(91, 22);
             this.LuigiRadioButton.TabIndex = 1;
             this.LuigiRadioButton.Text = "ルイージ";
             this.LuigiRadioButton.UseVisualStyleBackColor = true;
+            this.LuigiRadioButton.CheckedChanged += new System.EventHandler(this.RadioButton_CheckedChanged);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(640, 375);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.LuigiRadioButton);
             this.Controls.Add(this.AButton);
             this.Controls.Add(this.MarioRadioButton);
             this.Controls.Add(this.RightButton);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);

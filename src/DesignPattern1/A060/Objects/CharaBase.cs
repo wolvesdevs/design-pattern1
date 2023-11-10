@@ -19,5 +19,7 @@ namespace A060.Objects
         public int X { get; set; }
         public int Y { get; set; }
         public Color Color { get; }
+
+        public abstract void MoveRight();
     }
 }

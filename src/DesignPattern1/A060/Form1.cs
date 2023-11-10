@@ -22,14 +22,20 @@ namespace A060
         private int _luigiCount = 0;
 
         private List<CharaBase> _charaList = new List<CharaBase>();
+        private CharaBase _selectedChara;
+
+        private CharaBase _mario = new Mario();
+        private CharaBase _luigi = new Luigi();
 
         public Form1()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
 
-            _charaList.Add(new Mario());
-            _charaList.Add(new Luigi());
+            _charaList.Add(_mario);
+            _charaList.Add(_luigi);
+
+            _selectedChara = _charaList[0];
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -58,6 +64,9 @@ namespace A060
             //    panel1.Refresh();
             //    return;
             //}
+
+            _selectedChara.MoveRight();
+            panel1.Refresh();
         }
 
         private void AButton_Click(object sender, EventArgs e)
@@ -88,6 +97,21 @@ namespace A060
                 return;
             }
 
+        }
+
+        private void RadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (MarioRadioButton.Checked)
+            {
+                _selectedChara = _mario;
+                return;
+            }
+
+            if (LuigiRadioButton.Checked)
+            {
+                _selectedChara = _luigi;
+                return;
+            }
         }
     }
 }
