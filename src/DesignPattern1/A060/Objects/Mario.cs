@@ -18,17 +18,9 @@ namespace A060.Objects
             return "マリオです。";
         }
 
-        public override bool IsMessageTiming()
+        protected override bool IsMessageTiming(int count)
         {
-            _count++;
-
-            if (_count == 3)
-            {
-                _count = 0;
-                return true;
-            }
-
-            return false;
+            return count == 3;
         }
 
         public override void MoveRight()

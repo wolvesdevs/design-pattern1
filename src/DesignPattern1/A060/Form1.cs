@@ -46,7 +46,7 @@ namespace A060
 
         private void AButton_Click(object sender, EventArgs e)
         {
-            if (_selectedChara.IsMessageTiming())
+            if (_selectedChara.Call())
             {
                 MessageBox.Show(_selectedChara.GetMessage());
             }

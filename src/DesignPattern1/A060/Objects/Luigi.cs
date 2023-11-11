@@ -18,17 +18,9 @@ namespace A060.Objects
             return "ルイージです。";
         }
 
-        public override bool IsMessageTiming()
+        protected override bool IsMessageTiming(int count)
         {
-            _count++;
-
-            if (_count == 5)
-            {
-                _count = 0;
-                return true;
-            }
-
-            return false;
+            return count == 5;
         }
 
         public override void MoveRight()
