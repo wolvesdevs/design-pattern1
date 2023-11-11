@@ -9,6 +9,8 @@ namespace A060.Objects
 {
     public abstract class CharaBase
     {
+        protected int _count = 0;
+
         public CharaBase(int x, int y, Color color)
         {
             X = x;
@@ -21,5 +23,7 @@ namespace A060.Objects
         public Color Color { get; }
 
         public abstract void MoveRight();
+        public abstract bool IsMessageTiming();
+        public abstract string GetMessage();
     }
 }

@@ -13,6 +13,24 @@ namespace A060.Objects
         {
         }
 
+        public override string GetMessage()
+        {
+            return "マリオです。";
+        }
+
+        public override bool IsMessageTiming()
+        {
+            _count++;
+
+            if (_count == 3)
+            {
+                _count = 0;
+                return true;
+            }
+
+            return false;
+        }
+
         public override void MoveRight()
         {
             base.X += 10;
