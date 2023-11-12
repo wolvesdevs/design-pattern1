@@ -21,7 +21,6 @@ namespace Machine.UI
         {
             FanEntity entity = MachineFacade.FanSpin(1);
             MachineFacade.CameraTake();
-            MachineFacade.
         }
     }
 }
