@@ -20,6 +20,8 @@ namespace Machine.UI
         private void Form1_Load(object sender, EventArgs e)
         {
             FanEntity entity = MachineFacade.FanSpin(1);
+            MachineFacade.CameraTake();
+            MachineFacade.
         }
     }
 }

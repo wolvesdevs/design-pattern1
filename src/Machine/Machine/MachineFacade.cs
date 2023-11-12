@@ -8,9 +8,33 @@ namespace Machine
 {
     public static class MachineFacade
     {
+        private static int _fanStopValue;
+
+        public static int BoxInternalTemperatureFunStop()
+        {
+            FanStop(0);
+
+            try
+            {
+                System.Threading.Thread.Sleep(30000);
+                var result = new Box().GetInternalTemperature();
+                _fanStopValue = result;
+                return result;
+            }
+            finally
+            {
+                FanStart(0);
+            }
+        }
+
         public static int BoxInternalTemperature()
         {
             return new Box().GetInternalTemperature();
+        }
+        
+        public static int BoxInternalTemperatureFunStopInMemory()
+        {
+            return _fanStopValue;
         }
 
         public static int BoxExternalTemperature()
@@ -20,6 +44,11 @@ namespace Machine
 
         public static void CameraTake()
         {
+            if (BoxInternalTemperature() > 70)
+            {
+                throw new Exception("内部温度が70度を超えています。");
+            }
+
             new Camera().Take();
         }
 
@@ -39,7 +68,7 @@ namespace Machine
         }
 
         public static void PowerOn()
-        { 
+        {
             new Power().On();
         }
 
