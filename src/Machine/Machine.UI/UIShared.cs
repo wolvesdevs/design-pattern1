@@ -10,7 +10,14 @@ namespace Machine.UI
     {
         static UIShared()
         {
-            MachineFacade = new MachineFacade();
+            if (1 == 1)
+            {
+                MachineFacade = new DammyMachineFacade();
+            }
+            else
+            {
+                MachineFacade = new MachineFacade();
+            }
         }
 
         internal static IMachineFacade MachineFacade { get; }
