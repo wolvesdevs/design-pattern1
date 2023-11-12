@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Machine
 {
-    public static class MachineFacade
+    public class MachineFacade : IMachineFacade
     {
         private static int _fanStopValue;
 
@@ -14,7 +14,7 @@ namespace Machine
         /// ファン停止時の内部温度を取得する
         /// </summary>
         /// <returns>ファン停止時の内部温度</returns>
-        public static int BoxInternalTemperatureFunStop()
+        public int BoxInternalTemperatureFunStop()
         {
             FanStop(0);
 
@@ -35,7 +35,7 @@ namespace Machine
         /// 内部温度を取得する
         /// </summary>
         /// <returns>内部温度</returns>
-        public static int BoxInternalTemperature()
+        public int BoxInternalTemperature()
         {
             return new Box().GetInternalTemperature();
         }
@@ -44,7 +44,7 @@ namespace Machine
         /// ファンを停止した内部温度の前回値を取得
         /// </summary>
         /// <returns>ファンを停止した内部温度の前回値</returns>
-        public static int BoxInternalTemperatureFunStopInMemory()
+        public int BoxInternalTemperatureFunStopInMemory()
         {
             return _fanStopValue;
         }
@@ -52,7 +52,7 @@ namespace Machine
         /// 外部温度の取得
         /// </summary>
         /// <returns>外部温度</returns>
-        public static int BoxExternalTemperature()
+        public int BoxExternalTemperature()
         {
             return new Box().GetExternalTemperature();
         }
@@ -61,7 +61,7 @@ namespace Machine
         /// 写真を撮る
         /// </summary>
         /// <exception cref="Exception"></exception>
-        public static void CameraTake()
+        public void CameraTake()
         {
             if (BoxInternalTemperature() > 70)
             {
@@ -76,16 +76,16 @@ namespace Machine
         /// </summary>
         /// <param name="fanId">ファンID</param>
         /// <returns>ファンの回転数</returns>
-        public static FanEntity FanSpin(int fanId)
+        public FanEntity FanSpin(int fanId)
         {
             return new Fan().GetSpin(fanId);
         }
-        
+
         /// <summary>
         /// ファンを動かす
         /// </summary>
         /// <param name="fanId">ファンID</param>
-        public static void FanStart(int fanId)
+        public void FanStart(int fanId)
         {
             new Fan().Start(fanId);
         }
@@ -94,7 +94,7 @@ namespace Machine
         /// ファンを止める
         /// </summary>
         /// <param name="fanId">ファンID</param>
-        public static void FanStop(int fanId)
+        public void FanStop(int fanId)
         {
             new Fan().Stop(fanId);
         }
@@ -102,7 +102,7 @@ namespace Machine
         /// <summary>
         /// 電源ON
         /// </summary>
-        public static void PowerOn()
+        public void PowerOn()
         {
             new Power().On();
         }
@@ -110,7 +110,7 @@ namespace Machine
         /// <summary>
         /// 電源OFF
         /// </summary>
-        public static void PowerOff()
+        public void PowerOff()
         {
             new Power().Off();
         }
@@ -118,7 +118,7 @@ namespace Machine
         /// <summary>
         /// バックライトOFF
         /// </summary>
-        public static void BacklightOff()
+        public void BacklightOff()
         {
             new Power().BacklightOff();
         }
